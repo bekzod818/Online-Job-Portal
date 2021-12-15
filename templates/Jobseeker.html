@@ -1,0 +1,38 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+    <div class="container card">
+        <h1 class="text-center">Available openings</h1>
+        <div class="card-body">
+            <table class="table table-hover">
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Description</th>
+                    <th>Salary</th>
+                    <th>Experience</th>
+                    <th>Location</th>
+                    <th>Join</th>
+                </tr>
+                {% for c in companies %}
+                    <tr>
+                        <td>{{ c.name }}</td>
+                        <td>{{ c.position }}</td>
+                        <td>{{ c.description }}</td>
+                        <td>{{ c.salary }}</td>
+                        <td>{{ c.experience }}</td>
+                        <td>{{ c.location }}</td>
+                        <td><a href="{% url 'apply' %}" class="btn btn-info btn-sm" type="submit">Apply</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <h2>All Companies</h2>
+        {% for c in companies %}
+            {{ c.name }}
+        {% endfor %}
+    </div>
+{% endblock %}
