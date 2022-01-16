@@ -21,7 +21,7 @@
         <span class="user">Hello, {{ request.user }}  &nbsp;</span>
         <span><a class="user btn btn-danger" href="{% url 'logout' %}"> Logout</a></span>
     {% else %}
-        <span><a class="user btn btn-info" href="{% url 'login' %}">Login</a></span>
+        <span><a class="user btn btn-info m-2" href="{% url 'login' %}">Login</a></span>
         <span><a class="user btn btn-danger" href="{% url 'register' %}">Register</a></span>
     {% endif %}
 </nav>

@@ -1,4 +1,5 @@
 {% extends 'main.html' %}
+{% load crispy_forms_tags %}
 {% load static %}
 {% block content %}
     <head>
@@ -11,8 +12,8 @@
     <div class="maindiv jumbotron container">
         <form method="POST" action="">
             {% csrf_token %}
-            {{ form.as_p }}
-            <input class="btn btn-success btn-lg" type="submit" value="Register">
+            {{ form|crispy }}
+            <input class="btn btn-primary" type="submit" value="Register">
             <p>Already have an account? <a href='{% url "login" %}'>Login</a></p>
         </form>
     </div>
